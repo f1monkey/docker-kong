@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+    kong:
+        image: kong:2.0
+        networks:
+            f1monkey:
+                aliases:
+                    - f1monkey-kong
+
+networks:
+    f1monkey:
+        external: true
+
+
+
