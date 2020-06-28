@@ -1,0 +1,27 @@
+_format_version: "1.1"
+
+services:
+    -   name: v1-auth-auth
+        url: http://f1monkey-auth:8080/v1/auth
+        routes:
+            -   name: auth
+                paths:
+                    - /v1/auth
+    -   name: v1-auth-sessions
+        url: http://f1monkey-auth:8080/v1/sessions
+        routes:
+            -   name: sessions
+                paths:
+                    - /v1/sessions
+    -   name: v1-eve-characters-access-tokens
+        url: http://f1monkey-eve-characters:8080/v1/access-tokens
+        routes:
+            -   name: access-tokens
+                paths:
+                    - /v1/access-tokens
+    -   name: v1-eve-characters-characters
+        url: http://f1monkey-eve-characters:8080/v1/characters
+        routes:
+            -   name: characters
+                paths:
+                    - /v1/characters
