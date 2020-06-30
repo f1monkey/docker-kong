@@ -25,3 +25,9 @@ services:
             -   name: characters
                 paths:
                     - /v1/characters
+    -   name: v1-eve-characters-market
+        url: http://f1monkey-eve-market:8080/v1
+        routes:
+            -   name: market
+                paths:
+                    - /v1/market
