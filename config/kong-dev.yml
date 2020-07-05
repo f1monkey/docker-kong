@@ -7,6 +7,13 @@ services:
             -   name: auth
                 paths:
                     - /v1/auth
+        plugins:
+            -   name: cors
+                config:
+                    methods: [HEAD, GET, POST, PUT, DELETE, OPTIONS]
+                    headers: ['Accept', 'Content-Length', 'Content-Type', 'Authorization', 'X-Debug']
+                    credentials: true
+                    origins: ['*']
     -   name: v1-auth-sessions
         url: http://f1monkey-auth:8080/v1/sessions
         routes:
@@ -19,15 +26,36 @@ services:
             -   name: access-tokens
                 paths:
                     - /v1/access-tokens
+        plugins:
+            -   name: cors
+                config:
+                    methods: [HEAD, GET, POST, PUT, DELETE, OPTIONS]
+                    headers: ['Accept', 'Content-Length', 'Content-Type', 'Authorization', 'X-Debug']
+                    credentials: true
+                    origins: ['*']
     -   name: v1-eve-characters-characters
         url: http://f1monkey-eve-characters:8080/v1/characters
         routes:
             -   name: characters
                 paths:
                     - /v1/characters
+        plugins:
+            -   name: cors
+                config:
+                    methods: [HEAD, GET, POST, PUT, DELETE, OPTIONS]
+                    headers: ['Accept', 'Content-Length', 'Content-Type', 'Authorization', 'X-Debug']
+                    credentials: true
+                    origins: ['*']
     -   name: v1-eve-characters-market
         url: http://f1monkey-eve-market:8080/v1
         routes:
             -   name: market
                 paths:
                     - /v1/market
+        plugins:
+            -   name: cors
+                config:
+                    methods: [HEAD, GET, POST, PUT, DELETE, OPTIONS]
+                    headers: ['Accept', 'Content-Length', 'Content-Type', 'Authorization', 'X-Debug']
+                    credentials: true
+                    origins: ['*']
