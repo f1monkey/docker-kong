@@ -20,6 +20,13 @@ services:
             -   name: sessions
                 paths:
                     - /v1/sessions
+        plugins:
+            -   name: cors
+                config:
+                    methods: [HEAD, GET, POST, PUT, DELETE, OPTIONS]
+                    headers: ['Accept', 'Content-Length', 'Content-Type', 'Authorization', 'X-Debug']
+                    credentials: true
+                    origins: ['*']
     -   name: v1-eve-characters-access-tokens
         url: http://f1monkey-eve-characters:8080/v1/access-tokens
         routes:
